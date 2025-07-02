@@ -21,6 +21,37 @@
       overflow-x: hidden;
     }
 
+    .about-section {
+  width: 100%;
+  padding: 4rem 2rem 0;
+  background-color: #0c0c0c;
+  text-align: center;
+}
+
+.about-heading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.about-image-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+
     header {
       position: fixed;
       top: 0;
@@ -933,16 +964,12 @@
 
 <!-- ABOUT Section -->
 <section id="about" class="about-section" data-aos="fade-up">
+  <h2 class="about-heading glow-text">About</h2>
   <div class="about-image-wrapper">
     <img src="aboutus.png" alt="About Us" class="about-image" />
-    <div class="about-text glass-block">
-      <h2 class="section-title glow-text">About</h2>
-      <p class="section-subtitle">We're not a company. We're a question.</p>
-      <p class="section-subtitle">What would it look like to design technology with a soul?</p>
-      <p class="section-subtitle">We are researchers, writers, and designers creating tools that bring people back to themselves.</p>
-    </div>
   </div>
 </section>
+
 
 
 
