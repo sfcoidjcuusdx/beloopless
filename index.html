@@ -365,6 +365,33 @@
   margin-bottom: 0.5rem;
 }
 
+/* Container with side-by-side layout */
+.section-inner.large-image-layout {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Image takes up majority of width */
+.section-image-block.wide-image {
+  flex: 2;
+}
+
+.section-image-block.wide-image img.about-illustration {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* Text block uses less space */
+.text-block {
+  flex: 1;
+  min-width: 300px;
+}
+
+
 .feature-box p {
   font-size: 0.95rem;
   color: #e0fdfd;
@@ -859,15 +886,15 @@
 
 <!-- ABOUT Section -->
 <section id="about" class="section-container" data-aos="fade-up">
-  <div class="section-inner horizontal-section">
+  <div class="section-inner horizontal-section large-image-layout">
     
-    <!-- Image Block (left side) -->
-    <div class="section-image-block">
+    <!-- Large Image Block (left side) -->
+    <div class="section-image-block wide-image">
       <img src="aboutus.png" alt="About Us" class="about-illustration" />
     </div>
 
     <!-- Text Block (right side) -->
-    <div class="glass-block no-glow">
+    <div class="glass-block no-glow text-block">
       <h2 class="section-title glow-text">About</h2>
       <p class="section-subtitle">We're not a company. We're a question.</p>
       <p class="section-subtitle">What would it look like to design technology with a soul?</p>
@@ -876,6 +903,7 @@
 
   </div>
 </section>
+
 
 
 
