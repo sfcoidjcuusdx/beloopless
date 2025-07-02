@@ -322,6 +322,19 @@
   line-height: 1.6;
 }
 
+.section-inner.horizontal-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.section-image-block img.about-illustration {
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+}
+
+
 .section-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -847,17 +860,23 @@
 <!-- ABOUT Section -->
 <section id="about" class="section-container" data-aos="fade-up">
   <div class="section-inner horizontal-section">
+    
+    <!-- Image Block (left side) -->
     <div class="section-image-block">
-      <img src="personicon.png" alt="Team Icon" class="about-illustration" />
+      <img src="aboutus.png" alt="About Us" class="about-illustration" />
     </div>
+
+    <!-- Text Block (right side) -->
     <div class="glass-block no-glow">
       <h2 class="section-title glow-text">About</h2>
       <p class="section-subtitle">We're not a company. We're a question.</p>
       <p class="section-subtitle">What would it look like to design technology with a soul?</p>
       <p class="section-subtitle">We are researchers, writers, and designers creating tools that bring people back to themselves.</p>
     </div>
+
   </div>
 </section>
+
 
 
 
