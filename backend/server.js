@@ -58,4 +58,7 @@ app.get('/api/posts', (req, res) => {
   res.json(posts);
 });
 
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+// ✅ Updated for Railway or production: binds to 0.0.0.0 and uses dynamic PORT
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on http://0.0.0.0:${PORT}`);
+});
