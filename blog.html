@@ -43,15 +43,28 @@
       background: rgba(255, 255, 255, 0.02);
       border-radius: 1rem;
       border: 1px solid rgba(0, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .blog-post:hover {
+      transform: scale(1.01);
+      box-shadow: 0 0 20px rgba(109, 255, 255, 0.15);
     }
 
     .blog-post h2 {
       color: #7dfcff;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-post p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
     }
 
     .blog-post small {
       display: block;
-      margin-top: 0.5rem;
       color: #88cfd0;
       font-size: 0.85rem;
     }
@@ -90,12 +103,16 @@
   </div>
 
   <script>
-    fetch('https://backendnew-production.up.railway.app/api/posts')
-      .then(response => response.json())
-      .then(posts => {
+    async function loadPosts() {
+      try {
+        const response = await fetch('https://backendnew-production.up.railway.app/api/posts');
+        console.log("✅ Fetched post data:", response);
+        const posts = await response.json();
+
         const container = document.getElementById('blog-container');
         container.innerHTML = '';
-        if (posts.length === 0) {
+
+        if (!posts || posts.length === 0) {
           container.innerHTML = '<p>No blog posts yet.</p>';
           return;
         }
@@ -110,11 +127,13 @@
           `;
           container.appendChild(postElement);
         });
-      })
-      .catch(error => {
-        document.getElementById('blog-container').innerHTML = '<p>Failed to load posts.</p>';
-        console.error(error);
-      });
+      } catch (error) {
+        console.error("❌ Error fetching posts:", error);
+        document.getElementById('blog-container').innerHTML = '<p>Failed to load posts. Please try again later.</p>';
+      }
+    }
+
+    loadPosts();
   </script>
 </body>
 </html>
