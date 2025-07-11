@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors'); // ✅ Enable CORS
 require('dotenv').config();
 
 // ✅ Print loaded environment variables
@@ -12,6 +13,7 @@ console.log("ADMIN_SECRET:", process.env.ADMIN_SECRET);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(cors()); // ✅ Allow all origins (adjust if needed for production)
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(session({
@@ -65,7 +67,14 @@ app.post('/admin/post', (req, res) => {
   if (!req.session.admin) return res.status(403).send('Forbidden');
 
   const postsPath = path.join(__dirname, 'posts.json');
-  const posts = JSON.parse(fs.readFileSync(postsPath, 'utf8'));
+  let posts = [];
+
+  try {
+    posts = JSON.parse(fs.readFileSync(postsPath, 'utf8'));
+  } catch (e) {
+    console.error("⚠️ Failed to read posts.json. Initializing with empty array.");
+  }
+
   posts.unshift({
     title: req.body.title,
     content: req.body.content,
@@ -79,8 +88,14 @@ app.post('/admin/post', (req, res) => {
 // Public API for blog posts
 app.get('/api/posts', (req, res) => {
   const postsPath = path.join(__dirname, 'posts.json');
-  const posts = JSON.parse(fs.readFileSync(postsPath, 'utf8'));
-  res.json(posts);
+
+  try {
+    const posts = JSON.parse(fs.readFileSync(postsPath, 'utf8'));
+    res.json(posts);
+  } catch (error) {
+    console.error("❌ Failed to load posts:", error);
+    res.status(500).json({ error: 'Failed to load posts' });
+  }
 });
 
 // Start server
