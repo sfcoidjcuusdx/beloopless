@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoopLess Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: #0f172a;
+      color: #ccf3ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: rgba(0, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      color: #aefaff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .blog-post {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 1rem;
+      border: 1px solid rgba(0, 255, 255, 0.1);
+    }
+
+    .blog-post h2 {
+      color: #7dfcff;
+    }
+
+    .login-link {
+      display: block;
+      margin-top: 2rem;
+      text-align: right;
+    }
+
+    .login-link a {
+      color: #67e8f9;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="text-xl font-bold">LoopLess</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>LoopLess Blog</h1>
+
+    <div class="blog-post">
+      <h2>Welcome to the Blog</h2>
+      <p>This is where our latest thoughts on behavioral tech, digital balance, and intentional design will live.</p>
+    </div>
+
+    <div class="login-link">
+      <a href="/admin">Admin Login</a>
+    </div>
+  </div>
+</body>
+</html>
