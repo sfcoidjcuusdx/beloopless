@@ -49,6 +49,13 @@
       color: #7dfcff;
     }
 
+    .blog-post small {
+      display: block;
+      margin-top: 0.5rem;
+      color: #88cfd0;
+      font-size: 0.85rem;
+    }
+
     .login-link {
       display: block;
       margin-top: 2rem;
@@ -73,15 +80,42 @@
 
   <div class="container">
     <h1>LoopLess Blog</h1>
-
-    <div class="blog-post">
-      <h2>Welcome to the Blog</h2>
-      <p>This is where our latest thoughts on behavioral tech, digital balance, and intentional design will live.</p>
+    <div id="blog-container">
+      <p>Loading posts...</p>
     </div>
 
     <div class="login-link">
       <a href="/admin">Admin Login</a>
     </div>
   </div>
+
+  <script>
+    fetch('https://backendnew-production.up.railway.app/api/posts')
+      .then(response => response.json())
+      .then(posts => {
+        const container = document.getElementById('blog-container');
+        container.innerHTML = '';
+        if (posts.length === 0) {
+          container.innerHTML = '<p>No blog posts yet.</p>';
+          return;
+        }
+
+        posts.forEach(post => {
+          const postElement = document.createElement('div');
+          postElement.className = 'blog-post';
+          postElement.innerHTML = `
+            <h2>${post.title}</h2>
+            <p>${post.content}</p>
+            <small>Posted on ${new Date(post.date).toLocaleString()}</small>
+          `;
+          container.appendChild(postElement);
+        });
+      })
+      .catch(error => {
+        document.getElementById('blog-container').innerHTML = '<p>Failed to load posts.</p>';
+        console.error(error);
+      });
+  </script>
 </body>
 </html>
+
