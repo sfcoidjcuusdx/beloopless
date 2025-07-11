@@ -2,7 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const fs = require('fs');
 const path = require('path');
-const cors = require('cors'); // ✅ Enable CORS
+const cors = require('cors');
 require('dotenv').config();
 
 // ✅ Print loaded environment variables
@@ -13,7 +13,7 @@ console.log("ADMIN_SECRET:", process.env.ADMIN_SECRET);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors()); // ✅ Allow all origins (adjust if needed for production)
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(session({
@@ -21,6 +21,9 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
+// Serve static files from views folder
+app.use(express.static(path.join(__dirname, 'views')));
 
 // Serve login page
 app.get('/admin', (req, res) => {
@@ -52,14 +55,7 @@ app.get('/admin/dashboard', (req, res) => {
     return res.redirect('/admin');
   }
 
-  res.send(`
-    <h1>Admin Dashboard</h1>
-    <form method="POST" action="/admin/post">
-      <input name="title" placeholder="Title" required /><br><br>
-      <textarea name="content" rows="6" cols="60" placeholder="Write your post here..." required></textarea><br><br>
-      <button type="submit">Publish</button>
-    </form>
-  `);
+  res.sendFile(path.join(__dirname, 'views', 'admin-dashboard.html'));
 });
 
 // Handle new post
