@@ -1034,43 +1034,233 @@
   }
 
   .mobile-only {
-    padding: 2rem;
-    text-align: center;
+    display: none;
     font-family: 'Space Grotesk', sans-serif;
     background: linear-gradient(to bottom, #020617, #0f172a);
     color: #aefaff;
+    padding-bottom: 4rem;
   }
 
-  .mobile-only img {
-    width: 120px;
+  .mobile-nav {
+    position: sticky;
+    top: 0;
+    background: rgba(0, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0,255,255,0.1);
+  }
+
+  .mobile-nav a {
+    color: #7dfcff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  .mobile-hero {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .mobile-hero img {
+    width: 100px;
     margin-bottom: 1rem;
   }
 
-  .mobile-only h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  .mobile-hero h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #00e5ff, #00ffc3, #00e5ff);
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: shimmer 5s linear infinite;
   }
 
-  .mobile-only p {
+  @keyframes shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .mobile-hero p {
+    font-size: 1rem;
+    margin-top: 1rem;
+    line-height: 1.5;
+    color: #c6faff;
+  }
+
+  .mobile-carousel {
+    padding: 2rem 1rem;
+    overflow-x: auto;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .mobile-card {
+    background: rgba(0,255,255,0.05);
+    border: 1px solid rgba(0,255,255,0.1);
+    padding: 1rem;
+    border-radius: 1rem;
+    min-width: 240px;
+    flex-shrink: 0;
+    box-shadow: 0 5px 20px rgba(0,255,255,0.1);
+  }
+
+  .mobile-card h3 {
     font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    color: #b6faff;
   }
 
-  .mobile-only a {
+  .mobile-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #e0faff;
+  }
+
+  .mobile-section {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .mobile-section h2 {
+    font-size: 1.6rem;
+    color: #7dfcff;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0,255,255,0.3);
+  }
+
+  .mobile-section p {
+    font-size: 1rem;
+    color: #ccf3ff;
+    margin-bottom: 1.5rem;
+  }
+
+  .mobile-feature {
+    background: rgba(0,255,255,0.04);
+    border: 1px solid rgba(0,255,255,0.1);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .mobile-feature h3 {
+    font-size: 1.1rem;
+    color: #aefaff;
+    margin-bottom: 0.5rem;
+  }
+
+  .mobile-feature p {
+    font-size: 0.95rem;
+    color: #d0faff;
+  }
+
+  .mobile-footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #67e8f9;
+    padding-top: 2rem;
+  }
+
+  .mobile-footer a {
     color: #67e8f9;
     text-decoration: underline;
-    font-weight: 600;
   }
 </style>
 
 <div class="mobile-only">
-  <img src="looplesslogo1.png" alt="LoopLess Logo" />
-  <h1>Welcome to LoopLess</h1>
-  <p>Student-founded. Psychology-powered.</p>
-  <p>We help you break the endless scroll—gently.</p>
-  <p><a href="mailto:crew@looplessapp.com">Join the mission</a></p>
+  <nav class="mobile-nav">
+    <a href="#products">Products</a>
+    <a href="#mission">Mission</a>
+    <a href="#careers">Careers</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+
+  <section class="mobile-hero">
+    <img src="looplesslogo1.png" alt="LoopLess Logo" />
+    <h1>LoopLess</h1>
+    <p>Student-founded. Psychology-powered.<br>Helping you break the scroll—gently.</p>
+    <p><a href="mailto:crew@looplessapp.com">Join the mission</a></p>
+  </section>
+
+  <section class="mobile-carousel">
+    <div class="mobile-card">
+      <h3>Zachary Basinger – CEO</h3>
+      <p>Visionary product designer leading LoopLess with clarity and care.</p>
+    </div>
+    <div class="mobile-card">
+      <h3>Kabir Kutty – CTO</h3>
+      <p>Architect of our backend and ethical tech frameworks.</p>
+    </div>
+    <div class="mobile-card">
+      <h3>Joseph Rozenblat – CFO</h3>
+      <p>Financial strategy rooted in sustainable, user-first growth.</p>
+    </div>
+    <div class="mobile-card">
+      <h3>Our Philosophy</h3>
+      <p>No guilt-trips. No shame. Just tools for presence and peace.</p>
+    </div>
+  </section>
+
+  <section id="products" class="mobile-section">
+    <h2>Products</h2>
+    <p>We’re building with intention—one mindful tool at a time.</p>
+    <div class="mobile-feature">
+      <h3><a href="https://www.looplessapp.com" target="_blank">LoopLess</a></h3>
+      <p>Science-backed app blocking and presence-rewarding platform.</p>
+    </div>
+    <div class="mobile-feature">
+      <h3>BetLess</h3>
+      <p>Coming soon.</p>
+    </div>
+    <div class="mobile-feature">
+      <h3>LaneLink</h3>
+      <p>Coming soon.</p>
+    </div>
+  </section>
+
+  <section id="mission" class="mobile-section">
+    <h2>Mission</h2>
+    <p>We believe tech should reinforce presence, not reduce it.</p>
+    <p>Behavior change doesn’t need to shout. It needs to shimmer quietly in the background.</p>
+  </section>
+
+  <section id="careers" class="mobile-section">
+    <h2>Careers</h2>
+    <p>We’re quietly assembling a team of researchers, designers, and thoughtful disruptors.</p>
+    <div class="mobile-feature">
+      <h3>Behavioral Research Intern</h3>
+      <p>Map cognitive loops. Test what actually helps.</p>
+    </div>
+    <div class="mobile-feature">
+      <h3>Marketing & Brand Strategy</h3>
+      <p>Shape an honest, hopeful narrative.</p>
+    </div>
+    <div class="mobile-feature">
+      <h3>Community Outreach Coordinator</h3>
+      <p>Grow our mission in the real world.</p>
+    </div>
+    <div class="mobile-feature">
+      <h3>Social Media Creative Lead</h3>
+      <p>Make it visual. Make it unforgettable.</p>
+    </div>
+    <div class="mobile-feature">
+      <h3>UX Storytelling Intern</h3>
+      <p>Write experiences that guide and ground.</p>
+    </div>
+  </section>
+
+  <div class="mobile-footer">
+    <p>© LoopLess | <a href="mailto:crew@looplessapp.com">Contact Us</a></p>
+  </div>
 </div>
+
 
 </body>
 </html>
