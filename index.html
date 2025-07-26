@@ -1066,12 +1066,12 @@
   }
 
   .mobile-hero img.logo {
-    width: 90px;
-    margin-bottom: 1rem;
+    width: 140px;
+    margin-bottom: 1.5rem;
   }
 
-  .mobile-hero h1 {
-    font-size: 1.75rem;
+  .mobile-heading {
+    font-size: 1.5rem;
     font-weight: 700;
     background: linear-gradient(to right, #00e5ff, #00ffc3, #00e5ff);
     background-size: 200% auto;
@@ -1079,6 +1079,12 @@
     background-clip: text;
     -webkit-background-clip: text;
     animation: shimmer 5s linear infinite;
+    margin-bottom: 1rem;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
   }
 
   .angled-phone-wrapper-mobile {
@@ -1105,11 +1111,6 @@
     border-radius: 28px;
   }
 
-  @keyframes shimmer {
-    0% { background-position: 0% center; }
-    100% { background-position: 200% center; }
-  }
-
   .mobile-hero p {
     font-size: 1rem;
     margin-top: 1rem;
@@ -1117,23 +1118,23 @@
     color: #c6faff;
   }
 
-  .mobile-carousel {
-    padding: 2rem 1rem;
-    overflow-x: auto;
-    display: flex;
-    gap: 1rem;
-    scroll-behavior: smooth;
-    animation: scrollCards 40s linear infinite;
+  .carousel-container {
+    overflow: hidden;
+    position: relative;
+    margin-top: 2rem;
   }
 
-  @keyframes scrollCards {
+  .mobile-carousel {
+    display: flex;
+    width: fit-content;
+    animation: scrollCarousel 40s linear infinite;
+    gap: 1rem;
+    padding: 1rem 1rem 0;
+  }
+
+  @keyframes scrollCarousel {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
-  }
-
-  .carousel-container {
-    overflow-x: hidden;
-    white-space: nowrap;
   }
 
   .mobile-card {
@@ -1141,7 +1142,7 @@
     border: 1px solid rgba(0,255,255,0.1);
     padding: 1rem;
     border-radius: 1rem;
-    min-width: 260px;
+    min-width: 240px;
     flex-shrink: 0;
     box-shadow: 0 5px 20px rgba(0,255,255,0.1);
   }
@@ -1219,13 +1220,14 @@
 
   <section class="mobile-hero">
     <img src="looplesslogo1.png" alt="LoopLess Logo" class="logo" />
-    <h1>LoopLess</h1>
+    <h2 class="mobile-heading">Behavioral Health Tech</h2>
     <div class="angled-phone-wrapper-mobile">
       <div class="angled-phone-mobile">
         <img src="demo7.png" alt="App Demo Screenshot" />
       </div>
     </div>
-    <p>Student-founded. Psychology-powered.<br>Helping you break the scroll—gently.</p>
+    <p>Student-founded. On a mission to help people break the endless scroll.</p>
+    <p>Backed by psychology, mindfulness, and intelligence.</p>
     <p><a href="mailto:crew@looplessapp.com">Join the mission</a></p>
   </section>
 
@@ -1306,7 +1308,6 @@
     <p>© LoopLess | <a href="mailto:crew@looplessapp.com">Contact Us</a></p>
   </div>
 </div>
-
 
 
 </body>
