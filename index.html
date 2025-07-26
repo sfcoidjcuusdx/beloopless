@@ -1146,6 +1146,56 @@
     color: #b6faff;
   }
 
+ /* Mobile-optimized Feature Box */
+.feature-box-small {
+  background: radial-gradient(circle at top left, rgba(0,255,255,0.08), rgba(0,180,255,0.04));
+  border: 1px solid rgba(0,255,255,0.15);
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 0 20px rgba(0,255,255,0.06);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 auto;
+  width: 220px;
+  scroll-snap-align: start;
+}
+
+.feature-box-small::before {
+  content: "";
+  position: absolute;
+  width: 160%;
+  height: 160%;
+  background: radial-gradient(circle, rgba(0,255,255,0.2), transparent);
+  top: -60%;
+  left: -60%;
+  animation: rotateGlow 12s linear infinite;
+  z-index: -1;
+}
+
+.feature-box-small:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0,255,255,0.2);
+  background: radial-gradient(circle at top left, rgba(0,255,255,0.12), rgba(0,180,255,0.06));
+}
+
+/* Mobile Card Titles */
+.feature-box-small h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #aafcff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 4px rgba(0,255,255,0.25);
+}
+
+/* Mobile Card Descriptions */
+.feature-box-small p {
+  color: #d6faff;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+
   .mobile-card p {
     font-size: 0.8rem;
     color: #e0faff;
