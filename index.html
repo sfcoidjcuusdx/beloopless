@@ -1214,57 +1214,7 @@
   box-shadow: 0 18px 40px rgba(0,255,255,0.2);
   background: radial-gradient(circle at top left, rgba(0,255,255,0.12), rgba(0,180,255,0.06));
 }
-/* Mobile-only visibility */
-.mobile-only {
-  display: block;
-}
 
-@media (min-width: 768px) {
-  .mobile-only {
-    display: none;
-  }
-}
-
-/* Fixed Top Glassy Nav */
-.mobile-nav-glassy-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background: rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 9999;
-  padding: 0.75rem 0;
-  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.1);
-}
-
-/* Centered Link Container */
-.mobile-nav-links {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  max-width: 100%;
-  width: 100%;
-  padding: 0 1rem;
-}
-
-/* Individual Links */
-.mobile-nav-links a {
-  color: #aefaff;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 0.5rem;
-  transition: color 0.3s ease;
-  text-align: center;
-  flex: 1;
-}
-
-.mobile-nav-links a:hover {
-  color: #ffffff;
-}
 
 /* Mobile Card Titles */
 .feature-box-small h3 {
@@ -1338,20 +1288,83 @@
     display: none;
   }
 }
+/* Ensure mobile-only section only shows on small screens */
+.mobile-only {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+/* Glassy fixed top nav */
+.mobile-nav-glassy-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 3.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.15);
+}
+
+/* Remove all default list and link spacing */
+.mobile-nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Link styling */
+.mobile-nav-list li {
+  flex: 1;
+  text-align: center;
+}
+
+.mobile-nav-list a {
+  color: #aefaff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  display: block;
+  padding: 0.75rem 0;
+  width: 100%;
+}
+
+.mobile-nav-list a:hover {
+  color: #ffffff;
+}
 
 </style>
 
 
 <div class="mobile-only">
   <nav class="mobile-nav-glassy-top">
-    <div class="mobile-nav-links">
-      <a href="#products">Products</a>
-      <a href="#mission">Mission</a>
-      <a href="#careers">Careers</a>
-      <a href="blog.html">Blog</a>
-    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#careers">Careers</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
   </nav>
 </div>
+
 
 
 
