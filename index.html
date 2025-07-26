@@ -1033,7 +1033,6 @@
   }
 
   .mobile-only {
-    display: none;
     font-family: 'Space Grotesk', sans-serif;
     background: linear-gradient(to bottom, #020617, #0f172a);
     color: #aefaff;
@@ -1054,7 +1053,7 @@
   }
 
   .mobile-nav a {
-    color: #7dfcff;
+    color: #aefaff;
     font-weight: 600;
     font-size: 0.9rem;
     text-decoration: none;
@@ -1067,139 +1066,113 @@
 
   .mobile-hero img.logo {
     width: 140px;
-    margin-bottom: 1.5rem;
-  }
-
-  .mobile-heading {
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(to right, #00e5ff, #00ffc3, #00e5ff);
-    background-size: 200% auto;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    animation: shimmer 5s linear infinite;
     margin-bottom: 1rem;
   }
 
-  @keyframes shimmer {
-    0% { background-position: 0% center; }
-    100% { background-position: 200% center; }
+  .angled-phone {
+    width: 200px;
+    transform: rotate(-12deg);
+    margin: 1rem auto;
+    display: block;
+    filter: drop-shadow(0 0 20px rgba(0,255,255,0.2));
   }
 
-  .angled-phone-wrapper-mobile {
-    display: flex;
-    justify-content: center;
-    margin: 1.5rem 0;
+  .behavioral-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1.5rem 1rem 0.5rem;
+    text-align: center;
+    color: #aefaff;
   }
 
-  .angled-phone-mobile {
-    width: 160px;
-    height: 310px;
-    background: #111;
-    border-radius: 30px;
-    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
-    transform: rotateY(-15deg) rotateX(8deg);
-    overflow: hidden;
-    border: 1px solid #00e5ff;
+  .behavioral-sub {
+    font-size: 0.95rem;
+    margin: 0 auto;
+    color: #ccf3ff;
+    max-width: 300px;
+    text-align: center;
+    line-height: 1.4;
   }
 
-  .angled-phone-mobile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 28px;
-  }
-
-  .mobile-hero p {
-    font-size: 1rem;
-    margin-top: 1rem;
-    line-height: 1.5;
-    color: #c6faff;
-  }
-
-  .carousel-container {
-    overflow: hidden;
-    position: relative;
-    margin-top: 2rem;
+  .mobile-hero a {
+    color: #aefaff;
+    text-decoration: underline;
+    font-weight: 600;
   }
 
   .mobile-carousel {
+    padding: 1.5rem 1rem;
+    overflow-x: auto;
     display: flex;
-    width: fit-content;
-    animation: scrollCarousel 40s linear infinite;
-    gap: 1rem;
-    padding: 1rem 1rem 0;
-  }
-
-  @keyframes scrollCarousel {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    gap: 0.75rem;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
   }
 
   .mobile-card {
-    background: rgba(0,255,255,0.05);
-    border: 1px solid rgba(0,255,255,0.1);
-    padding: 1rem;
-    border-radius: 1rem;
-    min-width: 240px;
+    background: rgba(0,255,255,0.04);
+    border: 1px solid rgba(0,255,255,0.08);
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    min-width: 180px;
     flex-shrink: 0;
-    box-shadow: 0 5px 20px rgba(0,255,255,0.1);
+    scroll-snap-align: center;
+    box-shadow: 0 3px 15px rgba(0,255,255,0.08);
   }
 
   .mobile-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
     color: #b6faff;
   }
 
   .mobile-card p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     line-height: 1.4;
     color: #e0faff;
   }
 
   .mobile-section {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
     text-align: center;
   }
 
   .mobile-section h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: #7dfcff;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 10px rgba(0,255,255,0.3);
+    margin-bottom: 0.75rem;
+    text-shadow: 0 0 10px rgba(0,255,255,0.2);
   }
 
   .mobile-section p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #ccf3ff;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
   }
 
   .mobile-feature {
-    background: rgba(0,255,255,0.04);
-    border: 1px solid rgba(0,255,255,0.1);
-    border-radius: 1rem;
-    padding: 1rem;
+    background: rgba(0,255,255,0.03);
+    border: 1px solid rgba(0,255,255,0.07);
+    border-radius: 0.75rem;
+    padding: 0.75rem;
     margin-bottom: 1rem;
     text-align: left;
   }
 
   .mobile-feature h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #aefaff;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
   }
 
   .mobile-feature p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: #d0faff;
   }
 
   .mobile-footer {
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #67e8f9;
     padding-top: 2rem;
   }
@@ -1219,40 +1192,31 @@
   </nav>
 
   <section class="mobile-hero">
-    <img src="looplesslogo1.png" alt="LoopLess Logo" class="logo" />
-    <h2 class="mobile-heading">Behavioral Health Tech</h2>
-    <div class="angled-phone-wrapper-mobile">
-      <div class="angled-phone-mobile">
-        <img src="demo7.png" alt="App Demo Screenshot" />
-      </div>
+    <img src="looplesslogo1.png" class="logo" alt="LoopLess Logo" />
+    <img src="angled-phone.png" class="angled-phone" alt="Angled Phone Demo" />
+    <div class="behavioral-text">Behavioral Health Tech</div>
+    <div class="behavioral-sub">
+      Rooted in psychology. Built with presence. Designed to reduce digital harm—gently.
     </div>
-    <p>Student-founded. On a mission to help people break the endless scroll.</p>
-    <p>Backed by psychology, mindfulness, and intelligence.</p>
     <p><a href="mailto:crew@looplessapp.com">Join the mission</a></p>
   </section>
 
-  <section class="carousel-container">
-    <div class="mobile-carousel">
-      <div class="mobile-card">
-        <h3>Zachary Basinger – CEO</h3>
-        <p>Visionary product designer leading LoopLess with clarity and care.</p>
-      </div>
-      <div class="mobile-card">
-        <h3>Kabir Kutty – CTO</h3>
-        <p>Architect of our backend and ethical tech frameworks.</p>
-      </div>
-      <div class="mobile-card">
-        <h3>Joseph Rozenblat – CFO</h3>
-        <p>Financial strategy rooted in sustainable, user-first growth.</p>
-      </div>
-      <div class="mobile-card">
-        <h3>Our Philosophy</h3>
-        <p>No guilt-trips. No shame. Just tools for presence and peace.</p>
-      </div>
-      <div class="mobile-card">
-        <h3>Our Services</h3>
-        <p>Personalized insights, habit coaching, distraction blocking—one platform.</p>
-      </div>
+  <section class="mobile-carousel">
+    <div class="mobile-card">
+      <h3>Zachary Basinger – CEO</h3>
+      <p>Visionary product designer leading LoopLess with clarity and care.</p>
+    </div>
+    <div class="mobile-card">
+      <h3>Kabir Kutty – CTO</h3>
+      <p>Architect of our backend and ethical tech frameworks.</p>
+    </div>
+    <div class="mobile-card">
+      <h3>Joseph Rozenblat – CFO</h3>
+      <p>Financial strategy rooted in sustainable, user-first growth.</p>
+    </div>
+    <div class="mobile-card">
+      <h3>Our Philosophy</h3>
+      <p>No guilt-trips. No shame. Just tools for presence and peace.</p>
     </div>
   </section>
 
@@ -1260,7 +1224,7 @@
     <h2>Products</h2>
     <p>We’re building with intention—one mindful tool at a time.</p>
     <div class="mobile-feature">
-      <h3><a href="https://www.looplessapp.com" target="_blank">LoopLess</a></h3>
+      <h3><a href="https://www.looplessapp.com" target="_blank" style="color:#aefaff;">LoopLess</a></h3>
       <p>Science-backed app blocking and presence-rewarding platform.</p>
     </div>
     <div class="mobile-feature">
