@@ -1069,6 +1069,40 @@
     margin: 0 auto 1rem;
   }
 
+ .mobile-only {
+  display: block;
+}
+
+.mobile-nav-glassy {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.75rem 1rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.4); /* subtle dark glass */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+  box-shadow: 0 -4px 12px rgba(0, 255, 255, 0.08);
+}
+
+.mobile-nav-glassy a {
+  color: #aefaff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-glassy a:hover {
+  color: #ffffff;
+}
+
+
   .angled-phone-wrapper-mobile {
     perspective: 1000px;
     transform-style: preserve-3d;
@@ -1241,12 +1275,14 @@
 </style>
 
 <div class="mobile-only">
-  <nav class="mobile-nav">
+  <nav class="mobile-nav-glassy">
     <a href="#products">Products</a>
     <a href="#mission">Mission</a>
     <a href="#careers">Careers</a>
     <a href="blog.html">Blog</a>
   </nav>
+</div>
+
 
   <section class="mobile-hero">
     <img src="looplesslogo1.png" class="logo" alt="LoopLess Logo" />
