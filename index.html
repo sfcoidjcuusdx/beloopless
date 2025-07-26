@@ -1288,7 +1288,7 @@
     display: none;
   }
 }
-/* Ensure mobile-only section only shows on small screens */
+/* Show only on mobile */
 .mobile-only {
   display: block;
 }
@@ -1299,51 +1299,44 @@
   }
 }
 
-/* Glassy fixed top nav */
+/* Glassy nav bar */
 .mobile-nav-glassy-top {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100vw;
-  height: 3.5rem;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.15);
 }
 
-/* Remove all default list and link spacing */
+/* List layout */
 .mobile-nav-list {
-  list-style: none;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* even spacing */
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
-/* Link styling */
+/* List items */
 .mobile-nav-list li {
-  flex: 1;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 0;
 }
 
+/* Anchor styling */
 .mobile-nav-list a {
   color: #aefaff;
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  display: block;
-  padding: 0.75rem 0;
+  text-align: center;
   width: 100%;
 }
 
@@ -1351,8 +1344,9 @@
   color: #ffffff;
 }
 
-</style>
 
+
+</style>
 
 <div class="mobile-only">
   <nav class="mobile-nav-glassy-top">
