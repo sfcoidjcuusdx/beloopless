@@ -860,6 +860,7 @@
 </head>
 
 <body>
+ <div class="desktop-only">
   <header>
   <div class="text-xl font-bold">LoopLess</div>
   <nav>
@@ -1019,5 +1020,57 @@
       .type("Unstoppable.")
       .go();
   </script>
+  </div> <!-- END of desktop-only wrapper -->
+
+ <style>
+  @media screen and (max-width: 768px) {
+    .desktop-only { display: none !important; }
+    .mobile-only { display: block !important; }
+  }
+
+  @media screen and (min-width: 769px) {
+    .desktop-only { display: block !important; }
+    .mobile-only { display: none !important; }
+  }
+
+  .mobile-only {
+    padding: 2rem;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(to bottom, #020617, #0f172a);
+    color: #aefaff;
+  }
+
+  .mobile-only img {
+    width: 120px;
+    margin-bottom: 1rem;
+  }
+
+  .mobile-only h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .mobile-only p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .mobile-only a {
+    color: #67e8f9;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+</style>
+
+<div class="mobile-only">
+  <img src="looplesslogo1.png" alt="LoopLess Logo" />
+  <h1>Welcome to LoopLess</h1>
+  <p>Student-founded. Psychology-powered.</p>
+  <p>We help you break the endless scroll—gently.</p>
+  <p><a href="mailto:crew@looplessapp.com">Join the mission</a></p>
+</div>
+
 </body>
 </html>
