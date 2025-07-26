@@ -1021,8 +1021,7 @@
       .go();
   </script>
   </div> <!-- END of desktop-only wrapper -->
-
- <style>
+<style>
   @media screen and (max-width: 768px) {
     .desktop-only { display: none !important; }
     .mobile-only { display: block !important; }
@@ -1063,11 +1062,11 @@
 
   .mobile-hero {
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 1rem;
   }
 
-  .mobile-hero img {
-    width: 100px;
+  .mobile-hero img.logo {
+    width: 90px;
     margin-bottom: 1rem;
   }
 
@@ -1080,6 +1079,30 @@
     background-clip: text;
     -webkit-background-clip: text;
     animation: shimmer 5s linear infinite;
+  }
+
+  .angled-phone-wrapper-mobile {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+  }
+
+  .angled-phone-mobile {
+    width: 160px;
+    height: 310px;
+    background: #111;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+    transform: rotateY(-15deg) rotateX(8deg);
+    overflow: hidden;
+    border: 1px solid #00e5ff;
+  }
+
+  .angled-phone-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 28px;
   }
 
   @keyframes shimmer {
@@ -1099,6 +1122,18 @@
     overflow-x: auto;
     display: flex;
     gap: 1rem;
+    scroll-behavior: smooth;
+    animation: scrollCards 40s linear infinite;
+  }
+
+  @keyframes scrollCards {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .carousel-container {
+    overflow-x: hidden;
+    white-space: nowrap;
   }
 
   .mobile-card {
@@ -1106,7 +1141,7 @@
     border: 1px solid rgba(0,255,255,0.1);
     padding: 1rem;
     border-radius: 1rem;
-    min-width: 240px;
+    min-width: 260px;
     flex-shrink: 0;
     box-shadow: 0 5px 20px rgba(0,255,255,0.1);
   }
@@ -1183,28 +1218,39 @@
   </nav>
 
   <section class="mobile-hero">
-    <img src="looplesslogo1.png" alt="LoopLess Logo" />
+    <img src="looplesslogo1.png" alt="LoopLess Logo" class="logo" />
     <h1>LoopLess</h1>
+    <div class="angled-phone-wrapper-mobile">
+      <div class="angled-phone-mobile">
+        <img src="demo7.png" alt="App Demo Screenshot" />
+      </div>
+    </div>
     <p>Student-founded. Psychology-powered.<br>Helping you break the scroll—gently.</p>
     <p><a href="mailto:crew@looplessapp.com">Join the mission</a></p>
   </section>
 
-  <section class="mobile-carousel">
-    <div class="mobile-card">
-      <h3>Zachary Basinger – CEO</h3>
-      <p>Visionary product designer leading LoopLess with clarity and care.</p>
-    </div>
-    <div class="mobile-card">
-      <h3>Kabir Kutty – CTO</h3>
-      <p>Architect of our backend and ethical tech frameworks.</p>
-    </div>
-    <div class="mobile-card">
-      <h3>Joseph Rozenblat – CFO</h3>
-      <p>Financial strategy rooted in sustainable, user-first growth.</p>
-    </div>
-    <div class="mobile-card">
-      <h3>Our Philosophy</h3>
-      <p>No guilt-trips. No shame. Just tools for presence and peace.</p>
+  <section class="carousel-container">
+    <div class="mobile-carousel">
+      <div class="mobile-card">
+        <h3>Zachary Basinger – CEO</h3>
+        <p>Visionary product designer leading LoopLess with clarity and care.</p>
+      </div>
+      <div class="mobile-card">
+        <h3>Kabir Kutty – CTO</h3>
+        <p>Architect of our backend and ethical tech frameworks.</p>
+      </div>
+      <div class="mobile-card">
+        <h3>Joseph Rozenblat – CFO</h3>
+        <p>Financial strategy rooted in sustainable, user-first growth.</p>
+      </div>
+      <div class="mobile-card">
+        <h3>Our Philosophy</h3>
+        <p>No guilt-trips. No shame. Just tools for presence and peace.</p>
+      </div>
+      <div class="mobile-card">
+        <h3>Our Services</h3>
+        <p>Personalized insights, habit coaching, distraction blocking—one platform.</p>
+      </div>
     </div>
   </section>
 
@@ -1260,6 +1306,7 @@
     <p>© LoopLess | <a href="mailto:crew@looplessapp.com">Contact Us</a></p>
   </div>
 </div>
+
 
 
 </body>
