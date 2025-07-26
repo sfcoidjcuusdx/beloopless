@@ -1037,6 +1037,7 @@
     background: linear-gradient(to bottom, #020617, #0f172a);
     color: #aefaff;
     overflow-x: hidden;
+    padding-bottom: 3rem;
   }
 
   .mobile-nav {
@@ -1044,8 +1045,8 @@
     justify-content: space-around;
     align-items: center;
     padding: 1rem;
-    border-bottom: 1px solid rgba(0,255,255,0.1);
-    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.5);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -1068,32 +1069,32 @@
     margin: 0 auto 1rem;
   }
 
- .angled-phone-wrapper-mobile {
-  perspective: 1000px;
-  transform-style: preserve-3d;
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
+  .angled-phone-wrapper-mobile {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
 
-.angled-phone-mobile {
-  width: 180px;
-  height: 360px;
-  background: #111;
-  border-radius: 36px;
-  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.25);
-  transform: rotateY(-25deg) rotateX(10deg);
-  overflow: hidden;
-  position: relative;
-  border: 2px solid #00e5ff;
-}
+  .angled-phone-mobile {
+    width: 180px;
+    height: 360px;
+    background: #111;
+    border-radius: 36px;
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.25);
+    transform: rotateY(-25deg) rotateX(10deg);
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #00e5ff;
+  }
 
-.angled-phone-mobile .screen {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 32px;
-}
+  .angled-phone-mobile .screen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 32px;
+  }
 
   .behavioral-text {
     font-size: 1.25rem;
@@ -1125,8 +1126,8 @@
   .mobile-carousel {
     display: flex;
     gap: 0.75rem;
-    animation: scroll 12s linear infinite;
     width: max-content;
+    animation: scroll 18s linear infinite;
   }
 
   .mobile-card {
@@ -1134,8 +1135,8 @@
     border: 1px solid rgba(0,255,255,0.1);
     padding: 0.6rem;
     border-radius: 0.75rem;
-    min-width: 170px;
-    max-width: 170px;
+    min-width: 160px;
+    max-width: 160px;
     box-shadow: 0 3px 15px rgba(0,255,255,0.06);
   }
 
@@ -1155,6 +1156,38 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
+
+  .mobile-section {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .mobile-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #aefaff;
+    text-align: center;
+  }
+
+  .mobile-feature {
+    background: rgba(0, 255, 255, 0.03);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 10px rgba(0, 255, 255, 0.05);
+  }
+
+  .mobile-feature h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #b6faff;
+  }
+
+  .mobile-feature p {
+    font-size: 0.85rem;
+    color: #e0faff;
+    line-height: 1.4;
+  }
 </style>
 
 <div class="mobile-only">
@@ -1169,10 +1202,10 @@
     <img src="looplesslogo1.png" class="logo" alt="LoopLess Logo" />
 
     <div class="angled-phone-wrapper-mobile">
-  <div class="angled-phone-mobile">
-    <img src="demo7.png" alt="App Screenshot" class="screen" />
-  </div>
-</div>
+      <div class="angled-phone-mobile">
+        <img src="demo7.png" alt="App Screenshot" class="screen" />
+      </div>
+    </div>
 
     <div class="behavioral-text">Behavioral Health Tech</div>
     <div class="behavioral-sub">
@@ -1201,107 +1234,49 @@
       </div>
     </div>
   </div>
-</div>
 
-<div class="mobile-only">
-  <nav class="mobile-nav">
-    <a href="#products">Products</a>
-    <a href="#mission">Mission</a>
-    <a href="#careers">Careers</a>
-    <a href="blog.html">Blog</a>
-  </nav>
-
-  <section class="mobile-hero">
-    <img src="looplesslogo1.png" alt="LoopLess Logo" class="logo" />
-    <h2 class="mobile-heading">Behavioral Health Tech</h2>
-
-    <div class="angled-phone-wrapper-mobile">
-      <div class="angled-phone-mobile">
-        <img src="demo7.png" alt="App Demo Screenshot" />
-      </div>
-    </div>
-
-    <p>Student-founded. On a mission to help people break the endless scroll.</p>
-    <p>Backed by psychology, mindfulness, and intelligence.</p>
-    <p><a href="mailto:crew@looplessapp.com">Join the mission</a></p>
-  </section>
-
-  <section class="carousel-container">
-    <div class="mobile-carousel">
-      <div class="mobile-card">
-        <h3>Zachary Basinger – CEO</h3>
-        <p>Visionary product designer leading LoopLess with clarity and care.</p>
-      </div>
-      <div class="mobile-card">
-        <h3>Kabir Kutty – CTO</h3>
-        <p>Architect of our backend and ethical tech frameworks.</p>
-      </div>
-      <div class="mobile-card">
-        <h3>Joseph Rozenblat – CFO</h3>
-        <p>Financial strategy rooted in sustainable, user-first growth.</p>
-      </div>
-      <div class="mobile-card">
-        <h3>Our Philosophy</h3>
-        <p>No guilt-trips. No shame. Just tools for presence and peace.</p>
-      </div>
-      <div class="mobile-card">
-        <h3>Our Services</h3>
-        <p>Personalized insights, habit coaching, distraction blocking—one platform.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="products" class="mobile-section">
+  <!-- Products Section -->
+  <section class="mobile-section" id="products">
     <h2>Products</h2>
-    <p>We’re building with intention—one mindful tool at a time.</p>
     <div class="mobile-feature">
-      <h3><a href="https://www.looplessapp.com" target="_blank">LoopLess</a></h3>
-      <p>Science-backed app blocking and presence-rewarding platform.</p>
+      <h3>Loopless App</h3>
+      <p>Our core mobile experience to block, reflect, and refocus — built for real-world screen use habits.</p>
     </div>
     <div class="mobile-feature">
-      <h3>BetLess</h3>
-      <p>A compassionate, data-driven approach to gambling recovery. Coming soon.</p>
-    </div>
-    <div class="mobile-feature">
-      <h3>LaneLink</h3>
-      <p>Smarter academic link-sharing designed for classrooms and clubs. Coming soon.</p>
+      <h3>Loopbreaker Arena</h3>
+      <p>A mini-game that transforms habit loops into cognitive skill-building through action.</p>
     </div>
   </section>
 
-  <section id="mission" class="mobile-section">
+  <!-- Mission Section -->
+  <section class="mobile-section" id="mission">
     <h2>Mission</h2>
-    <p>We believe tech should reinforce presence, not reduce it.</p>
-    <p>Behavior change doesn’t need to shout. It needs to shimmer quietly in the background.</p>
+    <div class="mobile-feature">
+      <h3>Digital Wellness Reimagined</h3>
+      <p>We’re not here to scold your screen time. We’re here to help you find peace with it.</p>
+    </div>
+    <div class="mobile-feature">
+      <h3>Science-Backed Approach</h3>
+      <p>Our features are grounded in CBT, behavioral science, and real user feedback.</p>
+    </div>
   </section>
 
-  <section id="careers" class="mobile-section">
+  <!-- Careers Section -->
+  <section class="mobile-section" id="careers">
     <h2>Careers</h2>
-    <p>We’re quietly assembling a team of researchers, designers, and thoughtful disruptors.</p>
     <div class="mobile-feature">
-      <h3>Behavioral Research Intern</h3>
-      <p>Map cognitive loops. Test what actually helps.</p>
+      <h3>Build the Future of Focus</h3>
+      <p>We’re building tools that make people more present. If that excites you, let’s talk.</p>
     </div>
     <div class="mobile-feature">
-      <h3>Marketing & Brand Strategy</h3>
-      <p>Shape an honest, hopeful narrative.</p>
+      <h3>Roles We’re Hiring</h3>
+      <p>iOS Engineer · Behavioral Designer · Product Illustrator · Research Fellow</p>
     </div>
     <div class="mobile-feature">
-      <h3>Community Outreach Coordinator</h3>
-      <p>Grow our mission in the real world.</p>
-    </div>
-    <div class="mobile-feature">
-      <h3>Social Media Creative Lead</h3>
-      <p>Make it visual. Make it unforgettable.</p>
-    </div>
-    <div class="mobile-feature">
-      <h3>UX Storytelling Intern</h3>
-      <p>Write experiences that guide and ground.</p>
+      <h3>Interested?</h3>
+      <p><a href="mailto:crew@looplessapp.com">Send us a note</a> with your interests and background.</p>
     </div>
   </section>
-
-  <div class="mobile-footer">
-    <p>© LoopLess | <a href="mailto:crew@looplessapp.com">Contact Us</a></p>
-  </div>
 </div>
 
 
