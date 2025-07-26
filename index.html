@@ -1,17 +1,18 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LoopLess</title>
   <link rel="icon" href="looplesslogo1.png" type="image/png" />
+
+  <!-- Fonts + AOS + TypeIt -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
 
   <style>
-    /* BEGIN EXISTING STYLES */
     body {
       margin: 0;
       font-family: 'Space Grotesk', sans-serif;
@@ -20,129 +21,855 @@
       overflow-x: hidden;
     }
 
-    /* ... [Insert all your original CSS styles here as-is] ... */
+    .about-section {
+  width: 100%;
+  padding: 4rem 2rem 0;
+  background-color: #0c0c0c;
+  text-align: center;
+}
 
-    /* --- BEGIN RESPONSIVE STYLES --- */
-    @media (max-width: 768px) {
-      header {
-        padding: 0 1rem;
-        height: auto;
-        flex-direction: column;
-        align-items: flex-start;
-      }
+.about-heading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: white;
+}
 
-      header nav {
-        margin-top: 0.5rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
+.about-image-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+}
 
-      .hero {
-        flex-direction: column;
-        gap: 2rem;
-        padding: 5rem 1.5rem 3rem;
-      }
+.about-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
 
-      .left-content {
-        max-width: 100%;
-        text-align: center;
-      }
 
-      .left-content img {
-        margin: 0 auto 1.5rem;
-        height: 80px;
-      }
-
-      .angled-phone-wrapper {
-        transform: none;
-      }
-
-      .angled-phone {
-        transform: none;
-        width: 220px;
-        height: 440px;
-      }
-
-      .carousel {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        animation: none;
-        gap: 1rem;
-        padding-left: 1rem;
-      }
-
-      .carousel-card {
-        min-width: 260px;
-      }
-
-      .section-inner.horizontal-section,
-      .horizontal-section {
-        flex-direction: column !important;
-        align-items: center;
-        text-align: center;
-        gap: 2rem;
-      }
-
-      .section-content-block,
-      .section-visual-block,
-      .glass-block {
-        max-width: 100%;
-        padding: 1.5rem;
-      }
-
-      .section-title {
-        font-size: 2rem;
-      }
-
-      .section-subtitle {
-        font-size: 1rem;
-      }
-
-      .feature-box h3 {
-        font-size: 1.25rem;
-      }
-
-      .feature-box p {
-        font-size: 0.95rem;
-      }
-
-      .product-grid, .careers-grid, .section-content {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-      }
-
-      .aura-ring {
-        width: 180px;
-        height: 180px;
-        font-size: 0.95rem;
-      }
-
-      .section-image-block img.about-illustration {
-        max-width: 100%;
-      }
-
-      nav a {
-        font-size: 1rem;
-      }
-
-      .carousel::-webkit-scrollbar {
-        display: none;
-      }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: rgba(0, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      z-index: 1000;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
     }
+
+    header .text-xl {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #7dfcff;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      color: #aefaff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .about-section {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.about-text {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: white;
+  max-width: 500px;
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.section-title.glow-text {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+
+    .backdrop {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(0,255,255,0.15), transparent 60%),
+                  radial-gradient(circle at 70% 60%, rgba(0,255,200,0.1), transparent 50%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      z-index: 10;
+      flex-wrap: wrap;
+    }
+
+    .left-content {
+      max-width: 480px;
+      text-align: left;
+    }
+
+    .left-content img {
+      height: 100px;
+      margin-bottom: 2rem;
+    }
+
+    .glow {
+      background: linear-gradient(to right, #00e5ff, #00ffc3, #00e5ff);
+      background-size: 200% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: shimmer 5s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    .angled-phone-wrapper {
+      perspective: 1000px;
+      transform-style: preserve-3d;
+    }
+
+    .angled-phone {
+      width: 260px;
+      height: 520px;
+      background: #111;
+      border-radius: 40px;
+      box-shadow: 0 20px 40px rgba(0, 255, 255, 0.3);
+      transform: rotateY(-25deg) rotateX(10deg);
+      overflow: hidden;
+      position: relative;
+      border: 2px solid #00e5ff;
+    }
+
+    .angled-phone .screen {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 36px;
+      animation: popin 1s ease-out;
+    }
+
+    @keyframes popin {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    #typing {
+      font-size: 1.1rem;
+      color: #aefaff;
+      margin-top: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .tease {
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      color: #94f7ff;
+      opacity: 0.85;
+    }
+
+    .recruit {
+      margin-top: 2.5rem;
+      font-size: 1.1rem;
+      color: #a5f3fc;
+      opacity: 0.85;
+    }
+
+    .recruit a {
+      color: #67e8f9;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .carousel-container {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      padding: 4rem 0;
+    }
+
+    .carousel {
+      display: flex;
+      width: max-content;
+      animation: scroll-left 20s linear infinite;
+      gap: 2rem;
+      padding-left: 2rem;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .carousel-card {
+      background: rgba(0,255,255,0.05);
+      border: 1px solid rgba(0,255,255,0.1);
+      padding: 2rem;
+      border-radius: 1rem;
+      min-width: 300px;
+      flex-shrink: 0;
+      box-shadow: 0 10px 30px rgba(0,255,255,0.1);
+    }
+
+    .carousel-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #7eeeff;
+    }
+
+    .carousel-card p {
+      font-size: 1rem;
+      color: #c4f3ff;
+    }
+
+    .carousel-card {
+  background: linear-gradient(135deg, rgba(0,255,255,0.07), rgba(0,200,255,0.1));
+  border: 1px solid rgba(0,255,255,0.15);
+  padding: 2rem;
+  border-radius: 1.25rem;
+  min-width: 320px;
+  flex-shrink: 0;
+  box-shadow: 0 15px 40px rgba(0,255,255,0.2);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at top left, rgba(0,255,255,0.2), transparent);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.carousel-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,255,255,0.3);
+}
+
+.carousel-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: #b6faff;
+  text-shadow: 0 0 6px rgba(0,255,255,0.3);
+}
+
+.carousel-card p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #e0faff;
+}
+
+.section-container {
+  width: 100%;
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-card {
+  max-width: 800px;
+  width: 100%;
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 2rem;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #aefaff;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: #ccf3ff;
+  margin-bottom: 1.5rem;
+}
+
+.section-list {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 600px;
+  color: #c0f6ff;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.section-container {
+  width: 100%;
+  padding: 6rem 2rem;
+  background: linear-gradient(to right, rgba(0,255,255,0.03), rgba(0,255,255,0.06));
+  border-top: 1px solid rgba(0,255,255,0.08);
+  border-bottom: 1px solid rgba(0,255,255,0.08);
+}
+
+.section-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.section-title-block {
+  max-width: 360px;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #a6faff;
+  text-shadow: 0 0 12px rgba(0,255,255,0.4);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #d0fcff;
+  line-height: 1.6;
+}
+
+.section-inner.horizontal-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.section-image-block img.about-illustration {
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+}
+
+
+.section-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  flex: 1;
+  min-width: 300px;
+}
+
+.feature-box {
+  background: rgba(0,255,255,0.04);
+  border: 1px solid rgba(0,255,255,0.08);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0,255,255,0.05);
+  transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-4px);
+  background: rgba(0,255,255,0.06);
+  box-shadow: 0 12px 35px rgba(0,255,255,0.1);
+}
+
+.feature-box h3 {
+  font-size: 1.15rem;
+  color: #aefaff;
+  margin-bottom: 0.5rem;
+}
+
+/* Container with side-by-side layout */
+.section-inner.large-image-layout {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Image takes up majority of width */
+.section-image-block.wide-image {
+  flex: 2;
+}
+
+.section-image-block.wide-image img.about-illustration {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+
+.text-block {
+  flex: 1;
+  min-width: 300px;
+}
+
+
+.feature-box p {
+  font-size: 0.95rem;
+  color: #e0fdfd;
+}
+
+.horizontal-section {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.about-illustration {
+  max-width: 240px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 255, 255, 0.15);
+  animation: popin 0.8s ease-out;
+}
+
+
+.section-icon {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-icon img {
+  width: 100%;
+  height: auto;
+}
+
+.icon-glow {
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.6));
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+
+.section-icon:hover .icon-glow {
+  transform: scale(1.1);
+}
+
+.section-content-block {
+  flex: 1;
+  min-width: 280px;
+}
+
+.horizontal-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
+.section-content-block,
+.section-visual-block {
+  flex: 1 1 45%;
+  background: rgba(0, 255, 255, 0.04);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,255,255,0.05);
+  transition: all 0.3s ease;
+}
+
+.section-visual-block:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0,255,255,0.1);
+}
+
+.glow-text {
+  color: #aefaff;
+  text-shadow: 0 0 8px rgba(0,255,255,0.4);
+}
+
+.neon-cyan {
+  color: #7dfcff;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.25);
+}
+
+.product-grid, .careers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.flashy-card {
+  background: radial-gradient(circle at 30% 30%, rgba(0,255,255,0.08), rgba(0,150,255,0.05));
+  border: 1px solid rgba(0,255,255,0.15);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0,255,255,0.1);
+  backdrop-filter: blur(12px);
+  transition: all 0.4s ease;
+}
+
+.flashy-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0,255,255,0.3);
+  background: radial-gradient(circle at 20% 20%, rgba(0,255,255,0.15), rgba(0,150,255,0.1));
+}
+
+/* Section Base */
+.section-container {
+  padding: 8rem 2rem;
+  position: relative;
+  z-index: 5;
+}
+
+.section-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  text-align: center;
+}
+
+/* Horizontal Layout */
+.horizontal-section {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 4rem;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+/* Title + Glow */
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #7dfcff;
+  text-shadow: 0 0 12px #00faff, 0 0 25px rgba(0,255,255,0.3);
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: #c6faff;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Product Grid */
+.section-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Feature Cards */
+.feature-box {
+  background: radial-gradient(circle at top left, rgba(0,255,255,0.08), rgba(0,180,255,0.04));
+  border: 1px solid rgba(0,255,255,0.15);
+  padding: 2rem;
+  border-radius: 1.75rem;
+  box-shadow: 0 0 30px rgba(0,255,255,0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.feature-box::before {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle, rgba(0,255,255,0.2), transparent);
+  top: -50%;
+  left: -50%;
+  animation: rotateGlow 12s linear infinite;
+  z-index: -1;
+}
+
+.feature-box:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0,255,255,0.3);
+  background: radial-gradient(circle at top left, rgba(0,255,255,0.15), rgba(0,180,255,0.07));
+}
+
+/* Titles Inside Cards */
+.feature-box h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #aafcff;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 6px rgba(0,255,255,0.3);
+}
+
+.feature-box p {
+  color: #e0faff;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Rotating Glow Animation */
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg) translateX(0%);
+  }
+  100% {
+    transform: rotate(360deg) translateX(0%);
+  }
+}
+
+/* Extra Flash */
+.section-visual-block {
+  flex: 1;
+  min-width: 300px;
+  padding: 2rem;
+  border-radius: 2rem;
+  background: linear-gradient(120deg, rgba(0,255,255,0.1), rgba(0,200,255,0.08));
+  box-shadow: inset 0 0 12px rgba(0,255,255,0.2);
+  backdrop-filter: blur(10px);
+}
+
+.angled-bg {
+  position: relative;
+  padding: 6rem 2rem;
+  clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0 100%);
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(0,255,255,0.05), rgba(0,255,255,0.02));
+}
+
+.cyan-glow-bg {
+  background: radial-gradient(circle at 30% 40%, rgba(0,255,255,0.05), transparent 60%),
+              radial-gradient(circle at 70% 60%, rgba(0,255,200,0.06), transparent 70%);
+}
+
+.cyan-gradient-bg-reverse {
+  background: radial-gradient(circle at 70% 40%, rgba(0,255,255,0.05), transparent 60%),
+              radial-gradient(circle at 30% 60%, rgba(0,255,200,0.06), transparent 70%);
+}
+
+.glass-block {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 60px rgba(0,255,255,0.07);
+  backdrop-filter: blur(10px);
+  max-width: 480px;
+}
+
+.horizontal-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.horizontal-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.aura-ring {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,255,255,0.15), rgba(0,255,255,0));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #aefeff;
+  font-size: 1rem;
+  border: 1px solid rgba(0,255,255,0.1);
+  box-shadow: 0 0 40px rgba(0,255,255,0.12);
+  padding: 1rem;
+}
+
+.horizontal-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.horizontal-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.section-image-block {
+  flex: 1;
+  max-width: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0,255,255,0.1);
+  filter: drop-shadow(0 0 12px rgba(0,255,255,0.3));
+  transition: transform 0.4s ease;
+}
+
+.section-image:hover {
+  transform: scale(1.03) rotate(1deg);
+}
+
+.glass-block {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 60px rgba(0,255,255,0.07);
+  backdrop-filter: blur(10px);
+  max-width: 500px;
+}
+
+.about-illustration {
+  max-width: 220px;
+  height: auto;
+  border-radius: 18px;
+  object-fit: cover;
+  animation: popin 0.8s ease-out;
+}
+
+
+.no-glow {
+  box-shadow: none !important;
+  background: rgba(0, 255, 255, 0.04);
+}
+
+
+.horizontal-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.horizontal-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.section-image-block {
+  flex: 1;
+  max-width: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-image-block svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 24px rgba(0,255,255,0.25));
+  animation: floatGlow 6s ease-in-out infinite;
+}
+
+@keyframes floatGlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.glass-block {
+  flex: 1;
+  max-width: 520px;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  background: rgba(0, 255, 255, 0.02);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0,255,255,0.1);
+  backdrop-filter: blur(12px);
+}
+
+
   </style>
 </head>
 
 <body>
   <header>
-    <div class="text-xl font-bold">LoopLess</div>
-    <nav>
-      <a href="#products">Products</a>
-      <a href="#mission">Mission</a>
-      <a href="#careers">Careers</a>
-      <a href="blog.html">Blog</a>
-    </nav>
-  </header>
+  <div class="text-xl font-bold">LoopLess</div>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#mission">Mission</a>
+    <a href="#careers">Careers</a>
+    <a href="blog.html">Blog</a> <!-- New blog link -->
+  </nav>
+</header>
+
 
   <div class="backdrop"></div>
 
@@ -164,6 +891,7 @@
     </div>
   </section>
 
+  <!-- Carousel section -->
   <section class="carousel-container" id="about" data-aos="fade-up">
     <div class="carousel">
       <div class="carousel-card">
@@ -193,65 +921,85 @@
     </div>
   </section>
 
-  <section id="products" class="section-container" data-aos="fade-up">
-    <div class="section-inner">
-      <h2 class="section-title">Products</h2>
-      <p class="section-subtitle">We're building with intention—one mindful tool at a time.</p>
-      <div class="section-content">
-        <div class="feature-box">
-          <h3><a href="https://www.looplessapp.com" target="_blank" style="color: #aefaff; text-decoration: none;">LoopLess</a></h3>
-          <p>A science-backed screen time recovery app that blocks distractions and rewards presence.</p>
-        </div>
-        <div class="feature-box">
-          <h3>BetLess</h3>
-          <p>Coming soon.</p>
-        </div>
-        <div class="feature-box">
-          <h3>LaneLink</h3>
-          <p>Coming soon.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- PRODUCTS Section -->
+<section id="products" class="section-container" data-aos="fade-up">
+  <div class="section-inner">
+    <h2 class="section-title">Products</h2>
+    <p class="section-subtitle">We're building with intention—one mindful tool at a time.</p>
+    <div class="section-content">
 
-  <section id="mission" class="section-container" data-aos="fade-up">
-    <div class="section-inner horizontal-section reverse">
-      <div class="section-image-block">
-        <svg viewBox="0 0 200 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#00f9ff" stop-opacity="0.6" />
-              <stop offset="100%" stop-color="#00f9ff" stop-opacity="0" />
-            </radialGradient>
-          </defs>
-          <circle cx="100" cy="100" r="80" fill="url(#glowGradient)" />
-          <circle cx="100" cy="100" r="6" fill="#00f9ff" />
-        </svg>
+      <div class="feature-box">
+        <h3><a href="https://www.looplessapp.com" target="_blank" style="color: #aefaff; text-decoration: none;">LoopLess</a></h3>
+        <p>A science-backed screen time recovery app that blocks distractions and rewards presence.</p>
       </div>
-      <div class="glass-block">
-        <h2 class="section-title glow-text">Mission</h2>
-        <p class="section-subtitle">Our mission is to unhook humanity—gently.</p>
-        <p class="section-subtitle">We believe tech should reinforce presence, not reduce it. Clarity, not chaos.</p>
-        <p class="section-subtitle">Behavior change doesn’t need to shout. It needs to shimmer quietly in the background.</p>
-      </div>
-    </div>
-  </section>
 
-  <section id="careers" class="section-container" data-aos="fade-up">
-    <div class="section-inner">
-      <h2 class="section-title">Careers</h2>
-      <p class="section-subtitle">We’re quietly assembling a team of researchers, designers, and thoughtful disruptors.</p>
-      <div class="section-content">
-        <div class="feature-box"><h3>Behavioral Research Intern</h3><p>Map cognitive loops. Test what actually helps.</p></div>
-        <div class="feature-box"><h3>Marketing & Brand Strategy</h3><p>Shape an honest, hopeful narrative.</p></div>
-        <div class="feature-box"><h3>Community Outreach Coordinator</h3><p>Grow our mission in the real world.</p></div>
-        <div class="feature-box"><h3>Product Research Assistant</h3><p>Turn user insights into bold features.</p></div>
-        <div class="feature-box"><h3>Social Media Creative Lead</h3><p>Make it visual. Make it unforgettable.</p></div>
-        <div class="feature-box"><h3>UX Storytelling Intern</h3><p>Write experiences that guide and ground.</p></div>
+      <div class="feature-box">
+        <h3>BetLess</h3>
+        <p>Coming soon.</p>
       </div>
-      <p class="text-lg mt-12 text-cyan-300">Sound like your vibe? <a href="mailto:crew@looplessapp.com" class="underline hover:text-white">crew@looplessapp.com</a></p>
+
+      <div class="feature-box">
+        <h3>LaneLink</h3>
+        <p>Coming soon.</p>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- MISSION Section -->
+<section id="mission" class="section-container" data-aos="fade-up">
+  <div class="section-inner horizontal-section reverse">
+    <div class="section-image-block">
+      <!-- SVG glow ring + spark -->
+      <svg viewBox="0 0 200 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#00f9ff" stop-opacity="0.6" />
+            <stop offset="100%" stop-color="#00f9ff" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <circle cx="100" cy="100" r="80" fill="url(#glowGradient)" />
+        <circle cx="100" cy="100" r="6" fill="#00f9ff" />
+      </svg>
+    </div>
+    <div class="glass-block">
+      <h2 class="section-title glow-text">Mission</h2>
+      <p class="section-subtitle">Our mission is to unhook humanity—gently.</p>
+      <p class="section-subtitle">We believe tech should reinforce presence, not reduce it. Clarity, not chaos.</p>
+      <p class="section-subtitle">Behavior change doesn’t need to shout. It needs to shimmer quietly in the background.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CAREERS Section -->
+<section id="careers" class="section-container" data-aos="fade-up">
+  <div class="section-inner">
+    <h2 class="section-title">Careers</h2>
+    <p class="section-subtitle">We’re quietly assembling a team of researchers, designers, and thoughtful disruptors.</p>
+    <div class="section-content">
+      <div class="feature-box"><h3>Behavioral Research Intern</h3><p>Map cognitive loops. Test what actually helps.</p></div>
+      <div class="feature-box"><h3>Marketing & Brand Strategy</h3><p>Shape an honest, hopeful narrative.</p></div>
+      <div class="feature-box"><h3>Community Outreach Coordinator</h3><p>Grow our mission in the real world.</p></div>
+      <div class="feature-box"><h3>Product Research Assistant</h3><p>Turn user insights into bold features.</p></div>
+      <div class="feature-box"><h3>Social Media Creative Lead</h3><p>Make it visual. Make it unforgettable.</p></div>
+      <div class="feature-box"><h3>UX Storytelling Intern</h3><p>Write experiences that guide and ground.</p></div>
+    </div>
+    <p class="text-lg mt-12 text-cyan-300">Sound like your vibe? <a href="mailto:crew@looplessapp.com" class="underline hover:text-white">crew@looplessapp.com</a></p>
+  </div>
+</section>
+
 
   <script>
     AOS.init({ once: true });
@@ -259,17 +1007,17 @@
       speed: 48,
       waitUntilVisible: true
     })
-    .type("Student founded.")
-    .pause(500)
-    .break()
-    .type("On a mission to help people break the endless scroll.")
-    .pause(300)
-    .break()
-    .type("Backed by psychology, mindfulness, and intelligence.")
-    .pause(400)
-    .break()
-    .type("Unstoppable.")
-    .go();
+      .type("Student founded.")
+      .pause(500)
+      .break()
+      .type("On a mission to help people break the endless scroll.")
+      .pause(300)
+      .break()
+      .type("Backed by psychology, mindfulness, and intelligence.")
+      .pause(400)
+      .break()
+      .type("Unstoppable.")
+      .go();
   </script>
 </body>
 </html>
