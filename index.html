@@ -997,7 +997,7 @@
 </section>
 
 
-  <script>
+ <script>
     AOS.init({ once: true });
     new TypeIt("#typing", {
       speed: 48,
@@ -1017,6 +1017,11 @@
   </script>
   </div> 
 <style>
+
+ .mobile-only {
+  display: none;
+}
+
   @media screen and (max-width: 768px) {
     .desktop-only { display: none !important; }
     .mobile-only { display: block !important; }
@@ -1064,9 +1069,7 @@
     margin: 0 auto 1rem;
   }
 
- .mobile-only {
-  display: block;
-}
+
 
 
 
@@ -1268,9 +1271,7 @@
     line-height: 1.4;
   }
 
- .mobile-only {
-  display: block;
-}
+
 
 
 
@@ -1343,7 +1344,7 @@
       <li><a href="blog.html">Blog</a></li>
     </ul>
   </nav>
-</div>
+
 
 
 
@@ -1472,5 +1473,8 @@
 
 
 
+
+
 </body>
 </html>
+
